@@ -77,7 +77,7 @@ class App extends Component {
           this.loadMap()
         );
       })
-      .catch(err => alert("Foursquare API not fetched. Error occurs " + err));
+      .catch(err => window.alert("Foursquare API not fetched. Error occurs " + err));
   };
 
   /* MAP CREATION */
@@ -87,9 +87,9 @@ class App extends Component {
       center: { lat: 41.3851, lng: 2.1734 },
       zoom: 14
     });
-
+    
     // Map has been created
-    this.createMarker(map);
+    this.createMarker(map)
   };
 
   // Create Marker and Info Window
@@ -117,6 +117,7 @@ class App extends Component {
       }));
       // Create the infoWindow calling the function createInfoWindow()
       return this.createInfoWindow(marker, place);
+      
     });
   };
 
@@ -129,25 +130,30 @@ class App extends Component {
     <h3>Address: ${place.venue.location.formattedAddress}</h3>
     </div>`;
 
+
     // Click on A Marker
     marker.addListener("click", function () {
       // Zoom to marker on click
       this.map.setCenter(marker.getPosition());
       this.map.setZoom(16);
-      marker.setAnimation(window.google.maps.Animation.BOUNCE)
+      marker.setAnimation(window.google.maps.Animation.BOUNCE);
 
       setTimeout(function () {
         marker.setAnimation(null)
       }, 1000);
-
 
       // Change the content of the window
       infowindow.setContent(contentString);
 
       // Open An InfoWindow
       infowindow.open(this.map, marker);
+
+      this.map.addListener("click", function () {
+        infowindow.close()
+      });
     });
   };
+
 
   // Filter Venues depending on dropdown selection
   filterVenues = value => {
