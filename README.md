@@ -27,7 +27,7 @@ To enable the service worker, run the application in production build mode. This
 npm run build
 ```
 
-### Dependencies
+## Dependencies
 
 #### Packages
 
