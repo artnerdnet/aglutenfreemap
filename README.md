@@ -20,6 +20,20 @@ npm start
 - Once you are inside the folder, run `npm install`
 - Run the development server with `npm start`
 
+## Auth Keys
+In order to run the app, you are going to need API keys from [Foursquare](https://developer.foursquare.com/) and [Google Maps](https://developers.google.com/maps/documentation/javascript/get-api-key). 
+
+Replace them in the App.js file:
+
+For Google Maps:
+Line 43
+`const googleApi = "YOUR KEY HERE"`
+
+For FourSquare:
+Lines 49 and 50
+`clientSecret: "YOUR CLIENT SECRET HERE",`
+ `clientID: "YOUR CLIENT ID HERE",`
+ 
 ## Service Worker
 To enable the service worker, run the application in production build mode. This is included in `Create React App`:
     
