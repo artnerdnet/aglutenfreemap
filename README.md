@@ -1,5 +1,8 @@
 # Gluten Free Map
 
+![Desktop](http://www.artnerd.net/imgs/code-gallery/screen2.jpg)
+![Mobile](http://www.artnerd.net/imgs/code-gallery/mobile-screen2.jpg)
+
 ### Description
 
 This map has been created for the Udacity Front-End Developer Nanodegree, as a final project. It has been developed on `React` with `create-react-app`, fetching data from `Google Maps API` and `FourSquare API`.
